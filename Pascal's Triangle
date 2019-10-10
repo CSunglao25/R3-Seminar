@@ -1,0 +1,27 @@
+#include <stdio.h>
+
+int factorial(int num)
+{
+    return (num >= 1)?num*factorial(num-1):1;
+}
+
+void pascal(int rows)
+{
+    int k = rows,n = rows,result[n][k];
+    
+    for (n = 0;n <= rows;n++)
+    {
+        for(k = 0;k <= n;k++)
+        {
+            result[n][k] = factorial(n)/(factorial(k)*factorial(n-k));
+            printf("%d ",result[n][k]);
+        }
+        printf("\n");
+    }
+}
+
+int main (void)
+{
+    pascal(5);
+    return 0;
+}
